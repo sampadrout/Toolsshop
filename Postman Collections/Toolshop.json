@@ -37,9 +37,8 @@
 									],
 									"variable": [
 										{
-											"id": "592f5fb9-d413-4dd3-aef2-695d696c1805",
 											"key": "brandId",
-											"value": "<integer>",
+											"value": "1",
 											"description": "(Required) The brandId parameter in path"
 										}
 									]
