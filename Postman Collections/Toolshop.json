@@ -1,0 +1,3313 @@
+{
+	"info": {
+		"_postman_id": "6b34bd40-b7e8-46cd-904e-2461eb9f95bd",
+		"name": "Toolshop API",
+		"description": "Toolshop REST API technical description\n\nContact Support:\n Name: Testsmith\n Email: info@testsmith.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "brands",
+			"item": [
+				{
+					"name": "{brandId}",
+					"item": [
+						{
+							"name": "Retrieve specific brand",
+							"id": "b9a6b4bb-29e4-46a3-aabf-4e64590dd97e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brands/:brandId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands",
+										":brandId"
+									],
+									"variable": [
+										{
+											"id": "592f5fb9-d413-4dd3-aef2-695d696c1805",
+											"key": "brandId",
+											"value": "<integer>",
+											"description": "(Required) The brandId parameter in path"
+										}
+									]
+								},
+								"description": "Retrieve specific brand"
+							},
+							"response": [
+								{
+									"id": "2fb403f2-815e-4a48-8cf1-8881a0a322fb",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}"
+								},
+								{
+									"id": "5ad97713-a765-467c-ad36-00e95856ec9a",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "bdec5ce2-97e5-401b-91ee-dd751becf1ab",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update specific brand",
+							"id": "afcf572e-ce20-416e-aaec-7946fdc3bf88",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/brands/:brandId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands",
+										":brandId"
+									],
+									"variable": [
+										{
+											"id": "ec182a8c-2fc4-4661-b2d2-a8c9db3dacd8",
+											"key": "brandId",
+											"value": "<integer>",
+											"description": "(Required) The brandId parameter in path"
+										}
+									]
+								},
+								"description": "Update specific brand"
+							},
+							"response": [
+								{
+									"id": "560c3aaf-c04c-4d1e-8905-6afad0dfbeeb",
+									"name": "Result of the update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"success\": \"<boolean>\"\n}"
+								},
+								{
+									"id": "87c4c2c5-b35e-44ea-a123-0bcb9d2b6fd5",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "b7dd3b53-12f7-4c13-a76e-7f3f960c3269",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "211dc5db-2daa-4b41-93f9-3da4d8821375",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete specific brand",
+							"id": "aca0346e-9869-426f-b5a9-ee2862d7632a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/brands/:brandId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"brands",
+										":brandId"
+									],
+									"variable": [
+										{
+											"id": "b5631e66-a0a2-4a63-a005-40416c0425f9",
+											"key": "brandId",
+											"value": "<integer>",
+											"description": "(Required) The brandId parameter in path"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "771101ec-5a15-48c1-8c27-4ff890df72a7",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "c8815a5d-5c9b-4c08-ac23-77974192052b",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "65c607ec-d853-4b37-a4ac-903c366e8a12",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "c591e15d-7cc3-49b0-afca-6b2a5de275f8",
+									"name": "Returns when the entity is used elsewhere",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "0e172fa8-4b72-484f-a154-274bdebfe94f",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/brands/:brandId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"brands",
+												":brandId"
+											],
+											"variable": [
+												{
+													"key": "brandId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "d45d0822-6fa8-4d9b-9be0-a062e544f6cf"
+				},
+				{
+					"name": "Retrieve all brands",
+					"id": "fe0b1079-59ce-4484-88cf-3cdc065a5748",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/brands",
+						"description": "Retrieve all brands"
+					},
+					"response": [
+						{
+							"id": "7b107794-cd6e-43b5-8795-3af52af48f55",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\"\n  }\n]"
+						},
+						{
+							"id": "26f8e273-d561-43db-9d7c-5f0296dcbfc3",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "bada02d8-45cc-4864-91de-77582f1a3e5f",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Store new brand",
+					"id": "a1f1d19b-6781-4c15-a8a5-7aaa351a697f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/brands",
+						"description": "Store new brand"
+					},
+					"response": [
+						{
+							"id": "34ee1e7a-0339-4e3c-a54d-a53c55a2bb36",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}"
+						},
+						{
+							"id": "f7321001-9adf-4282-a9f4-fc4574869f5a",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "9ee39354-a45e-45e6-adec-77ee40285c8e",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "2ba2c5db-193d-49f3-9148-aac8fdee261a",
+							"name": "Returns when the server was not able to process the content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/brands"
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "776e8baa-a1f7-4b7d-b322-f864bbaf620e"
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "tree",
+					"item": [
+						{
+							"name": "{categoryId}",
+							"item": [
+								{
+									"name": "Retrieve specific category (including subcategories)",
+									"id": "39131da6-634b-4bfb-9000-c89b56465f1f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/tree/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												"tree",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"id": "73666c07-ec4f-4f3e-93da-08dff86c6b31",
+													"key": "categoryId",
+													"value": "<integer>",
+													"description": "(Required) The categoryId parameter in path"
+												}
+											]
+										},
+										"description": "Retrieve specific category (including subcategories)"
+									},
+									"response": [
+										{
+											"id": "68350438-ae74-4c4f-a2f2-cebf342b2603",
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/categories/tree/:categoryId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories",
+														"tree",
+														":categoryId"
+													],
+													"variable": [
+														{
+															"key": "categoryId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"id\": \"<integer>\",\n  \"parent_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"sub_categories\": [\n    {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    }\n  ]\n}"
+										},
+										{
+											"id": "e400a0fa-fc4b-4e3f-8e4f-7d1b113faf4f",
+											"name": "Returns when the resource is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/categories/tree/:categoryId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories",
+														"tree",
+														":categoryId"
+													],
+													"variable": [
+														{
+															"key": "categoryId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"id": "4dcb3b49-9573-4356-8f3a-7e39b896e1a5",
+											"name": "Returns when the method is not allowed for the requested route",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/categories/tree/:categoryId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"categories",
+														"tree",
+														":categoryId"
+													],
+													"variable": [
+														{
+															"key": "categoryId"
+														}
+													]
+												}
+											},
+											"status": "Method Not Allowed",
+											"code": 405,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "b3a2d1e4-82ff-456a-b39e-b6c6f670d620"
+						},
+						{
+							"name": "Retrieve all categories (including subcategories)",
+							"id": "6caafd62-81c4-4284-8abd-693c1e7b17e8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/tree?by_category_slug=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										"tree"
+									],
+									"query": [
+										{
+											"key": "by_category_slug",
+											"value": "<string>",
+											"description": "Parent category slug"
+										}
+									]
+								},
+								"description": "Retrieve all categories (including subcategories)"
+							},
+							"response": [
+								{
+									"id": "0d680947-3f3e-43f9-9a59-e477d6c57a44",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/tree?by_category_slug=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												"tree"
+											],
+											"query": [
+												{
+													"description": "Parent category slug",
+													"key": "by_category_slug",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"parent_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"sub_categories\": [\n      {\n        \"id\": \"<integer>\",\n        \"parent_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"slug\": \"<string>\",\n        \"sub_categories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"parent_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"slug\": \"<string>\",\n        \"sub_categories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"id\": \"<integer>\",\n    \"parent_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"sub_categories\": [\n      {\n        \"id\": \"<integer>\",\n        \"parent_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"slug\": \"<string>\",\n        \"sub_categories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"parent_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"slug\": \"<string>\",\n        \"sub_categories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          }\n        ]\n      }\n    ]\n  }\n]"
+								},
+								{
+									"id": "af3d039c-e82b-493e-96e6-b6084da4748a",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/tree?by_category_slug=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												"tree"
+											],
+											"query": [
+												{
+													"description": "Parent category slug",
+													"key": "by_category_slug",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "a719011c-4458-4823-ad4b-3261e3370a15",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/tree?by_category_slug=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												"tree"
+											],
+											"query": [
+												{
+													"description": "Parent category slug",
+													"key": "by_category_slug",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "c4656a75-d488-4c82-b631-e652e75fd326"
+				},
+				{
+					"name": "{categoryId}",
+					"item": [
+						{
+							"name": "Update specific category",
+							"id": "0c6834d8-d075-43a0-8941-c64125cdbf01",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"id": "9ca9f2f0-8d9e-4dab-8915-9f684ccda5fd",
+											"key": "categoryId",
+											"value": "<integer>",
+											"description": "(Required) The categoryId parameter in path"
+										}
+									]
+								},
+								"description": "Update specific category"
+							},
+							"response": [
+								{
+									"id": "495ebeac-404e-45f9-a2fe-968c050df76e",
+									"name": "Result of the update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"success\": \"<boolean>\"\n}"
+								},
+								{
+									"id": "57c091dc-013b-43d1-91a5-312704b0eb60",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "97b656e2-3bf6-4769-8a85-76a7d7a109a3",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "84743c64-c490-4105-bcd9-45d14a8be012",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete specific category",
+							"id": "66cdfe6b-d6af-44a3-a173-52a14333dff8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"id": "189c6d72-8636-4cfc-be3b-e15a8caaf1c7",
+											"key": "categoryId",
+											"value": "<integer>",
+											"description": "(Required) The categoryId parameter in path"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "6f0f1478-c2d8-4d54-882a-988307612fa6",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "5e4d0cd2-9742-4770-a50f-ae2c4e549d3d",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "8f9d3d2d-f743-4dfe-baf8-752f03eda41e",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "c4fe8777-fefe-43d3-9398-a671d924a7c3",
+									"name": "Returns when the entity is used elsewhere",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "da3586da-c760-4640-aaff-9a8807242052",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "9f4ecadb-c522-46fa-b324-c8f9fbe0f1e1"
+				},
+				{
+					"name": "Retrieve all categories",
+					"id": "defe8cfe-eee6-4794-b939-ecb28a95f633",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/categories",
+						"description": "Retrieve all categories"
+					},
+					"response": [
+						{
+							"id": "8c7abcc7-0680-45ba-b43a-88bf71969662",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"parent_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"sub_categories\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<integer>\",\n    \"parent_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"sub_categories\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      }\n    ]\n  }\n]"
+						},
+						{
+							"id": "0f718983-30ce-4061-baa4-24be5ffb705f",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "806b0ab7-1dd0-4b17-8f3b-1e6c78463ba3",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Store new category",
+					"id": "471a58c3-6908-4ead-8d67-b11e9b1c2ded",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/categories",
+						"description": "Store new category"
+					},
+					"response": [
+						{
+							"id": "f6911180-329e-4321-ac81-97d3521f019e",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"<integer>\",\n  \"parent_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"sub_categories\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    }\n  ]\n}"
+						},
+						{
+							"id": "1fee60fc-1132-4b4c-8398-9f6b84584b2e",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "c9f36a4b-ba02-4443-8baf-3768762546fc",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "e507673a-2ad3-4ea5-a2f1-754239992b50",
+							"name": "Returns when the server was not able to process the content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/categories"
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "f6f85f09-77fd-4c88-b380-d33529a6af1a"
+		},
+		{
+			"name": "images",
+			"item": [
+				{
+					"name": "Retrieve all images",
+					"id": "9b107f14-cbb8-4371-bac7-e2f8218c5db7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/images",
+						"description": "Retrieve all images"
+					},
+					"response": [
+						{
+							"id": "05f3d724-4a77-49de-94f9-4b7fb4a6fa7f",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/images"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"by_name\": \"<string>\",\n    \"by_url\": \"<string>\",\n    \"source_name\": \"<string>\",\n    \"source_url\": \"<string>\",\n    \"file_name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  {\n    \"by_name\": \"<string>\",\n    \"by_url\": \"<string>\",\n    \"source_name\": \"<string>\",\n    \"source_url\": \"<string>\",\n    \"file_name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n]"
+						},
+						{
+							"id": "c7152751-33b5-4021-be18-47f22027a9bc",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/images"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "606efdfe-7e1f-4325-b36c-2e017d034462",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/images"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "71ac0b8f-9797-4fc1-a5d6-a7508896316a"
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "{productId}",
+					"item": [
+						{
+							"name": "related",
+							"item": [
+								{
+									"name": "Retrieve related products",
+									"id": "0fb7c595-d065-4584-8a90-69450b8dcc67",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId/related",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId",
+												"related"
+											],
+											"variable": [
+												{
+													"id": "5ff18f9e-b203-4a69-ae69-d75377bf0e1d",
+													"key": "productId",
+													"value": "<integer>",
+													"description": "(Required) The productId parameter in path"
+												}
+											]
+										},
+										"description": "Retrieve related products"
+									},
+									"response": [
+										{
+											"id": "7f30d8ad-c85d-4ae1-a586-df0199db68ee",
+											"name": "Successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:productId/related",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":productId",
+														"related"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<number>\",\n    \"brand\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\"\n    },\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    },\n    \"product_image\": {\n      \"by_name\": \"<string>\",\n      \"by_url\": \"<string>\",\n      \"source_name\": \"<string>\",\n      \"source_url\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<number>\",\n    \"brand\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\"\n    },\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    },\n    \"product_image\": {\n      \"by_name\": \"<string>\",\n      \"by_url\": \"<string>\",\n      \"source_name\": \"<string>\",\n      \"source_url\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n]"
+										},
+										{
+											"id": "8bd6aeee-208c-4468-ab4f-cd802d74373c",
+											"name": "Returns when the resource is not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:productId/related",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":productId",
+														"related"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										},
+										{
+											"id": "b7896972-ddf7-4e67-b96d-b7a59c3c8b0d",
+											"name": "Returns when the method is not allowed for the requested route",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:productId/related",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":productId",
+														"related"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "Method Not Allowed",
+											"code": 405,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "a1ab6770-74f8-4ddf-a581-345d70c95435"
+						},
+						{
+							"name": "Retrieve specific product",
+							"id": "7a432f34-a14c-41f6-8316-db34589bd7be",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "932580bd-61b5-47bc-9fa8-97ea98f46ba4",
+											"key": "productId",
+											"value": "<integer>",
+											"description": "(Required) The productId parameter in path"
+										}
+									]
+								},
+								"description": "Retrieve specific product"
+							},
+							"response": [
+								{
+									"id": "374f8ad9-f3b5-46ca-b730-0a495836cc9f",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"brand\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\"\n  },\n  \"category\": {\n    \"id\": \"<integer>\",\n    \"parent_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"sub_categories\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      }\n    ]\n  },\n  \"product_image\": {\n    \"by_name\": \"<string>\",\n    \"by_url\": \"<string>\",\n    \"source_name\": \"<string>\",\n    \"source_url\": \"<string>\",\n    \"file_name\": \"<string>\",\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}"
+								},
+								{
+									"id": "d701d2cc-f4e9-43f8-8a4f-5dd55b9174fc",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "28458fa9-86e8-4dec-873f-e80232b397c3",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update specific product",
+							"id": "ade6c344-7c92-410d-b7b4-aadd935c9955",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "a04f51b7-4560-452c-bbf5-517d7abe1641",
+											"key": "productId",
+											"value": "<integer>",
+											"description": "(Required) The productId parameter in path"
+										}
+									]
+								},
+								"description": "Update specific product"
+							},
+							"response": [
+								{
+									"id": "6b2043ab-360a-46be-ad84-304de4044a0a",
+									"name": "Result of the update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"success\": \"<boolean>\"\n}"
+								},
+								{
+									"id": "0d2bfc6f-6f8e-49d9-9ae6-786ac715de35",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "fe8cb777-d76a-4c5b-b1f1-3f9d6275a29b",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "791c7ad6-15be-4a75-be76-69d2f26950db",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete specific product",
+							"id": "f76bb394-b4ce-4f96-980c-ec34059546d7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "cbe4f7b2-9026-4abf-a92e-34eb903dd4de",
+											"key": "productId",
+											"value": "<integer>",
+											"description": "(Required) The productId parameter in path"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f887d754-9522-481b-b1e2-f1a3ac73ea4f",
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "2b42ffdf-a25c-49be-80ab-c606815dfe54",
+									"name": "Returns when the resource is not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "0393b57d-917a-44bc-98c2-9ed2c2c32d8b",
+									"name": "Returns when the method is not allowed for the requested route",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "0fe3d887-afb3-4c45-ad60-849aa821ac55",
+									"name": "Returns when the entity is used elsewhere",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "4409d234-218d-41ce-b527-1791d315a827",
+									"name": "Returns when the server was not able to process the content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "e244a176-00c4-4cf8-9e64-64d4d331e1c0"
+				},
+				{
+					"name": "Retrieve all products",
+					"id": "87f67567-751a-44e6-92c7-fee3f21e274e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products?by_brand=<integer>&by_category=<integer>&is_rental=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "by_brand",
+									"value": "<integer>",
+									"description": "Id of brand"
+								},
+								{
+									"key": "by_category",
+									"value": "<integer>",
+									"description": "Id of category"
+								},
+								{
+									"key": "is_rental",
+									"value": "<string>",
+									"description": "Indication if we like to retrieve rentals products"
+								}
+							]
+						},
+						"description": "Retrieve all products"
+					},
+					"response": [
+						{
+							"id": "1812666b-51fa-401e-a094-9943c5ee71ba",
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?by_brand=<integer>&by_category=<integer>&is_rental=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Id of brand",
+											"key": "by_brand",
+											"value": "<integer>"
+										},
+										{
+											"description": "Id of category",
+											"key": "by_category",
+											"value": "<integer>"
+										},
+										{
+											"description": "Indication if we like to retrieve rentals products",
+											"key": "is_rental",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<number>\",\n    \"brand\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\"\n    },\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    },\n    \"product_image\": {\n      \"by_name\": \"<string>\",\n      \"by_url\": \"<string>\",\n      \"source_name\": \"<string>\",\n      \"source_url\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<number>\",\n    \"brand\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\"\n    },\n    \"category\": {\n      \"id\": \"<integer>\",\n      \"parent_id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"sub_categories\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        }\n      ]\n    },\n    \"product_image\": {\n      \"by_name\": \"<string>\",\n      \"by_url\": \"<string>\",\n      \"source_name\": \"<string>\",\n      \"source_url\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n]"
+						},
+						{
+							"id": "31b08e20-4633-4056-b5e7-d5cc52a2e1db",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?by_brand=<integer>&by_category=<integer>&is_rental=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Id of brand",
+											"key": "by_brand",
+											"value": "<integer>"
+										},
+										{
+											"description": "Id of category",
+											"key": "by_category",
+											"value": "<integer>"
+										},
+										{
+											"description": "Indication if we like to retrieve rentals products",
+											"key": "is_rental",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "9989adeb-7bac-4b3e-95b5-092cbe1b3730",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?by_brand=<integer>&by_category=<integer>&is_rental=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Id of brand",
+											"key": "by_brand",
+											"value": "<integer>"
+										},
+										{
+											"description": "Id of category",
+											"key": "by_category",
+											"value": "<integer>"
+										},
+										{
+											"description": "Indication if we like to retrieve rentals products",
+											"key": "is_rental",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Store new product",
+					"id": "8aae7e83-7402-44d7-aa3b-e9227cb44821",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/products",
+						"description": "Store new product"
+					},
+					"response": [
+						{
+							"id": "542a7d5f-c637-4b94-a4f1-9bdb3ffad88b",
+							"name": "Returns when product is created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/products"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\"\n}"
+						},
+						{
+							"id": "aaee2a5c-f319-4050-a76f-6e4d3b22f82a",
+							"name": "Returns when the resource is not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/products"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "375ed2e5-5783-4479-acd5-f1ba60f6e6e6",
+							"name": "Returns when the method is not allowed for the requested route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/products"
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "c9e05d5f-667b-4850-94cd-a62444f17d5e",
+							"name": "Returns when the server was not able to process the content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<number>\",\n  \"category_id\": \"<integer>\",\n  \"brand_id\": \"<integer>\",\n  \"product_image_id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/products"
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"responseTime": null,
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "37e26884-5342-484f-9d9c-d7664866e62d"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api-v1.practicesoftwaretesting.com"
+		}
+	]
+}
