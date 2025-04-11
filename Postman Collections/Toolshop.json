@@ -213,6 +213,40 @@
 						},
 						{
 							"name": "Update specific brand",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "738bc567-0e18-4825-a257-4f95d09f7bb1",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {",
+											"  pm.expect(pm.response.code).to.equal(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response has the required field 'success'\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.have.property('success');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Success field is a boolean\", function () {",
+											"  const responseData = pm.response.json();",
+											"  pm.expect(responseData.success).to.be.a('boolean');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "afcf572e-ce20-416e-aaec-7946fdc3bf88",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -231,7 +265,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"<string>\",\n  \"slug\": \"<string>\"\n}",
+									"raw": "{\n  \"name\": \"Brand name 10\",\n  \"slug\": \"brand-name-10\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -250,9 +284,8 @@
 									],
 									"variable": [
 										{
-											"id": "ec182a8c-2fc4-4661-b2d2-a8c9db3dacd8",
 											"key": "brandId",
-											"value": "<integer>",
+											"value": "1",
 											"description": "(Required) The brandId parameter in path"
 										}
 									]
@@ -1030,6 +1063,76 @@
 							"item": [
 								{
 									"name": "Retrieve specific category (including subcategories)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3ca8c163-0697-456e-99c3-8a1b68b12d2a",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"  pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"  pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"Validate the response schema for id, parent_id, name, and slug fields\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.id).to.be.a('string');",
+													"    pm.expect(responseData.parent_id).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.name).to.exist.and.to.be.a('string');",
+													"    pm.expect(responseData.slug).to.exist.and.to.be.a('string');",
+													"});",
+													"",
+													"",
+													"pm.test(\"Sub_categories array is present and not empty\", function () {",
+													"  const responseData = pm.response.json();",
+													"  ",
+													"  pm.expect(responseData).to.be.an('object');",
+													"  pm.expect(responseData.sub_categories).to.exist.and.to.be.an('array').and.to.have.lengthOf.at.least(1, \"Sub_categories array should not be empty\");",
+													"});",
+													"",
+													"",
+													"pm.test(\"Response time is less than 200ms\", function () {",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);",
+													"});",
+													"",
+													"pm.test(\"Validate the sub_categories array contains the expected fields and data types\", function () {",
+													"    const responseData = pm.response.json();",
+													"    ",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.sub_categories).to.be.an('array').and.to.have.lengthOf.at.least(1);",
+													"",
+													"    responseData.sub_categories.forEach(function(subCategory) {",
+													"        pm.expect(subCategory).to.be.an('object');",
+													"        pm.expect(subCategory.id).to.exist.and.to.be.a('number');",
+													"        pm.expect(subCategory.parent_id).to.exist.and.to.satisfy((val) => val === null || typeof val === 'number');",
+													"        pm.expect(subCategory.name).to.exist.and.to.be.a('string');",
+													"        pm.expect(subCategory.slug).to.exist.and.to.be.a('string');",
+													"        ",
+													"        pm.expect(subCategory.sub_categories).to.be.an('array');",
+													"        subCategory.sub_categories.forEach(function(innerSubCategory) {",
+													"            pm.expect(innerSubCategory).to.be.an('object');",
+													"            pm.expect(innerSubCategory.id).to.exist.and.to.satisfy((val) => val === null || typeof val === 'number');",
+													"            pm.expect(innerSubCategory.parent_id).to.exist.and.to.satisfy((val) => val === null || typeof val === 'number');",
+													"            pm.expect(innerSubCategory.name).to.exist.and.to.be.a('string');",
+													"            pm.expect(innerSubCategory.slug).to.exist.and.to.be.a('string');",
+													"            pm.expect(innerSubCategory.sub_categories).to.be.an('array');",
+													"        });",
+													"    });",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "39131da6-634b-4bfb-9000-c89b56465f1f",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -1042,6 +1145,15 @@
 												"value": "application/json"
 											}
 										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
 											"raw": "{{baseUrl}}/categories/tree/:categoryId",
 											"host": [
@@ -1054,9 +1166,8 @@
 											],
 											"variable": [
 												{
-													"id": "73666c07-ec4f-4f3e-93da-08dff86c6b31",
 													"key": "categoryId",
-													"value": "<integer>",
+													"value": "1",
 													"description": "(Required) The categoryId parameter in path"
 												}
 											]
